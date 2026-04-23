@@ -1,9 +1,11 @@
 from django.urls import path
-from apps.views import PostListCreateAPIView, CommentsListCreateAPIView, \
+from apps.views import PostListCreateAPIView, \
     PostRetrieveUpdateDestroyAPIView, PostCommentsListAPIView, CommentsRetrieveUpdateDestroyAPIView, \
     AlbumListCreateAPIView, AlbumRetrieveUpdateDestroyAPIView, PhotoListCreateAPIView, TodoListCreateAPIView, \
     PhotoRetrieveUpdateDestroyAPIView, TodoRetrieveUpdateDestroyAPIView, AlbumPhotoListAPIView, UserListCreateAPIView, \
-    UserRetrieveUpdateDestroyAPIView, UserPostListAPIView, UserTodoListAPIView, UserAlbumListAPIView
+    UserRetrieveUpdateDestroyAPIView, UserPostListAPIView, UserTodoListAPIView, UserAlbumListAPIView, \
+    CommentsListCreateAPIView, BookListCreateAPIView, BookRetrieveUpdateDestroyAPIView, ProductListCreateAPIView, \
+    OrderListCreateAPIView, CustomerListCreateAPIView, OrderItemListCreateAPIView, StudentListCreateAPIView
 
 urlpatterns = [
     path('posts', PostListCreateAPIView.as_view()),
@@ -23,4 +25,12 @@ urlpatterns = [
     path('users/<int:pk>/posts', UserPostListAPIView.as_view()),
     path('users/<int:pk>/todos', UserTodoListAPIView.as_view()),
     path('users/<int:pk>/albums', UserAlbumListAPIView.as_view()),
+    path('books', BookListCreateAPIView.as_view()),
+    path('books/<int:pk>', BookRetrieveUpdateDestroyAPIView.as_view()),
+    path('products', ProductListCreateAPIView.as_view()),
+    path('customer', CustomerListCreateAPIView.as_view()),
+    path('order', OrderListCreateAPIView.as_view()),
+    path('ordersItems', OrderItemListCreateAPIView.as_view()),
+    path('students', StudentListCreateAPIView.as_view())
 ]
+
